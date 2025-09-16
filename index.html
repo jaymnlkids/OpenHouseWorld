@@ -5,218 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cafe Finds in Makati</title>
 <style>
-
-    // Reset //
-
-    * {
-
-      margin: 0;
-
-      padding: 0;
-
-      box-sizing: border-box;
-
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-
       font-family: Arial, sans-serif;
-
       background: linear-gradient(135deg, #003366, #174978, #2F5F8A, #46769B, #5E8CAD, #75A2BF);
-
       color: #f0f4f8;
-      
     }
     
-    // Navigation Bar //
+    nav { background: #003366; padding: 15px; text-align: center; }
+    nav a { color: #75A2BF; text-decoration: none; margin: 0 15px; font-weight: bold; transition: color 0.3s; }
+    nav a:hover { color: #5E8CAD; }
 
-    nav {
+    header { text-align: center; padding: 100px 10px; background: #174978; color: #ffffff; }
 
-      background: #003366; /* Dark navy */
+    main { max-width: 900px; margin: 20px auto; background: #2F5F8A; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 12px rgba(0,0,0,0.4); }
 
-      padding: 15px;
+    section { margin-bottom: 30px; }
 
-      text-align: center;
-
-    }
-
-    nav a {
-
-      color: #75A2BF; /* Light blue */
-
-      text-decoration: none;
-
-      margin: 0 15px;
-
-      font-weight: bold;
-
-      transition: color 0.3s;
-
-    }
-
-    nav a:hover {
-
-      color: #5E8CAD; /* Softer blue hover */
-
-    }
-
-    header {
-
-      text-align: center;
-
-      padding: 400px 10px;
-
-      background: #174978; /* Deep blue */
-
-      color: #ffffff;
-
-    }
-
-    main {
-
-      max-width: 900px;
-
-      margin: 20px auto;
-
-      background: #2F5F8A; /* Muted blue */
-
-      padding: 20px;
-
-      border-radius: 10px;
-
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
-
-    }
-
-    section {
-
-      margin-bottom: 30px;
-
-    }
-
-    img, video {
-
-      display: block;
-
-      margin: 20px auto;
-
-      border-radius: 8px;
-
-      transition: transform 0.5s ease;
-
-    }
-
-    /* 2D Transform */
-
-    img:hover {
-
-      transform: scale(1.1) rotate(-2deg);
-
-    }
-
-    /* 3D Transform on button */
+    img, video { display: block; margin: 20px auto; border-radius: 8px; transition: transform 0.5s ease; }
+    img:hover { transform: scale(1.1) rotate(-2deg); }
 
     button {
-
       padding: 10px 20px;
-
       margin-top: 10px;
-
       border: none;
-
-      background: #46769B; /* Medium blue */
-
+      background: #46769B;
       color: white;
-
       font-size: 16px;
-
       border-radius: 8px;
-
       cursor: pointer;
-
       transition: transform 0.4s, background 0.3s;
-
     }
+    button:hover { background: #5E8CAD; transform: perspective(400px) rotateX(15deg); }
 
-    button:hover {
+    form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: 0 auto; }
+    input, textarea { padding: 10px; border: 1px solid #75A2BF; border-radius: 6px; width: 100%; background: #174978; color: #ffffff; }
 
-      background: #5E8CAD; /* Lighter blue */
+    footer { text-align: center; margin-top: 20px; padding: 15px; background: #003366; color: #75A2BF; border-radius: 0 0 10px 10px; }
 
-      transform: perspective(400px) rotateX(15deg);
-
-    }
-
-    /* Form */
-
-    form {
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 10px;
-
-      max-width: 400px;
-
-      margin: 0 auto;
-
-    }
-
-    input, textarea {
-
-      padding: 10px;
-
-      border: 1px solid #75A2BF;
-
-      border-radius: 6px;
-
-      width: 100%;
-
-      background: #174978;
-
-      color: #ffffff;
-
-    }
-
-    footer {
-
-      text-align: center;
-
-      margin-top: 20px;
-
-      padding: 15px;
-
-      background: #003366;
-
-      color: #75A2BF;
-
-      border-radius: 0 0 10px 10px;
-
-    }
-
-    /* Responsive */
-
-    @media (max-width: 600px) {
-
-      nav {
-
-        font-size: 14px;
-
-      }
-
-      video {
-
-        width: 100%;
-
-      }
-
-      img {
-
-        width: 100%;
-
-      }
-
-    }
+    @media (max-width: 600px) { nav { font-size: 14px; } video { width: 100%; } img { width: 100%; } }
 </style>
 </head>
 <body>
@@ -227,136 +55,106 @@
 <a href="#video">Video</a>
 <a href="#contact">Contact</a>
 </nav>
+
 <!-- Header Section -->
-<header>
+<header><br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
 <h1>Cafe Finds in Makati</h1>
 <p>OPEN HOUSE WORLD.</p>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
+<button onclick="askName()">👋 Say Hi</button>
+ <br></br> <br></br><br></br> <br></br> <br></br> <br></br> <br></br><br></br><br></br>
 </header>
+
 <!-- Main Content -->
 <main>
-<section id="about">
-<br></br>
-<br></br>
-
+<section id="about"><br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br><br></br><br></br><br></br><br></br>
 <h1>About My Journey</h1>
-<p>
-
-        I love discovering new cafes around Makati. Here, I share my experiences,
-
-        photos, and videos of cafes.
-</p>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<!-- Back Button -->
-<div style="text-align:center; margin: 30px 0;">
-<button onclick="history.back()">⬅ Back</button>
-</div>
+<p>I love discovering new cafes around Makati. Here, I share my experiences, photos, and videos of cafes.</p><br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br><br></br><br></br><br></br><br></br>
+<button onclick="favoriteCafe()">🏠 Your Favorite Cafe?</button>
 </section>
 
 <!-- Image Section -->
-
-<section id="featured">
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<h1>Featured Cafe</h1>
-<img src="Open.jpg "
-
-           alt="Makati Cafe View" width="500">
+<section id="featured"><br></br> <br></br> 
+<h1>Featured Cafe</h1><br></br>
+<img src="Open.jpg" alt="Makati Cafe View" width="500" onclick="rateCafe()">
 <p style="text-align: center;">Salcedo, Makati</p>
+<button onclick="favoriteDrink()">☕ Favorite Drink?</button>
+</section>
 
-<!-- Back Button -->
-<div style="text-align:center; margin: 30px 0;">
-<button onclick="history.back()">⬅ Back</button>
-</div>
 <!-- Video Section -->
-<section id="video">
-<br></br>
+<section id="video"><br></br> <br></br> 
 <h2>Sample Video</h2>
-<video width="400" controls>
-<source src="https://v3.tiktokcdn.com/6ad5ad367f28d86f7f15eeaac2e6aab0/68c4eefb/video/tos/alisg/tos-alisg-pve-0037c001/okDSDBfhQXmsoFDEzCfBAgUYEQEBOI4gRM9PLV/?a=1180&bti=OjR2KXMxaGRzZ3dAajo6NkAvOm1mXm92aSsxcWAjMTQzYA%3D%3D&ch=0&cr=0&dr=0&er=0&lr=all&net=0&cd=0%7C0%7C0%7C0&cv=1&br=2010&bt=1005&cs=0&ds=3&ft=~jVtYztOhWH6Bl_Z7FLo0PD1&mime_type=video_mp4&qs=0&rc=aTZnZTxkaWhkaTw0ODNmPEBpMzl2aHk5cnJmNDMzODczNEBhYjAyYi0yNjExLzUtLTYxYSNgbS82MmQ0ZC5hLS1kMTFzcw%3D%3D&vvpl=1&l=202509121211134ECC344B196935BDBCAF&btag=e000b8000&cc=6" type="video/mp4">
-
-        Your browser does not support the video tag.
+<video width="400" controls onclick="videoFeedback()">
+<source src="Video.mp4" type="video/mp4">
+Your browser does not support the video tag.
 </video>
 <p style="text-align: center;">Go Sit and Relax.</p>
 </section>
-<!-- Back Button -->
-<div style="text-align:center; margin: 30px 0;">
-<button onclick="history.back()">⬅ Back</button>
-</div>
+
 <!-- Contact Form -->
-<section id="contact">
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
+<section id="contact"><br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br><br></br><br></br><br></br><br></br>
 <h2>Contact Me</h2>
-<form>
+<form onsubmit="return confirmSubmit()">
 <input type="text" placeholder="Your Name" required>
 <input type="email" placeholder="Your Email" required>
 <textarea placeholder="Your Message"></textarea>
 <button type="submit">Send</button>
 </form>
 </section>
-<!-- Back Button -->
-<div style="text-align:center; margin: 30px 0;">
-<button onclick="history.back()">⬅ Back</button>
-</div>
 </main>
+
 <!-- Footer -->
 <footer>
 <p>&copy; Jaymnl_kids</p>
 </footer>
+
+<!-- JavaScript with Prompts -->
+<script>
+  // 1. Ask Name
+  function askName() {
+    let name = prompt("What is your name?");
+    if (name) alert("Welcome, " + name + "! Enjoy exploring cafes in Makati.");
+  }
+
+  // 2. Favorite Cafe
+  function favoriteCafe() {
+    let cafe = prompt("What’s your favorite café in Makati?");
+    if (cafe) alert(cafe + " is a great choice!");
+  }
+
+  // 3. Rate Cafe (image click)
+  function rateCafe() {
+    let rating = prompt("How would you rate this cafe out of 5?");
+    if (rating) alert("Thanks! You rated this cafe " + rating + "/5.");
+  }
+
+  // 4. Favorite Drink
+  function favoriteDrink() {
+    let drink = prompt("What’s your favorite café drink?");
+    if (drink) alert(drink + " sounds delicious! Perfect for café hopping.");
+  }
+
+  // 5. Video Feedback
+  function videoFeedback() {
+    let feedback = prompt("Do you like this relaxing vibe? (yes/no)");
+    if (feedback && feedback.toLowerCase() === "yes") {
+      alert("Awesome! Glad you liked it.");
+    } else {
+      alert("No worries, maybe the next café will suit your vibe.");
+    }
+  }
+
+  // 6. Confirm Form Submit
+  function confirmSubmit() {
+    let confirmMsg = prompt("Are you sure you want to submit this form? Type YES to confirm.");
+    if (confirmMsg && confirmMsg.toLowerCase() === "yes") {
+      alert("Form submitted successfully!");
+      return true;
+    } else {
+      alert("Form submission cancelled.");
+      return false;
+    }
+  }
+</script>
 </body>
 </html>
  
