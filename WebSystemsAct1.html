@@ -44,10 +44,41 @@
 
     footer { text-align: center; margin-top: 20px; padding: 15px; background: #003366; color: #75A2BF; border-radius: 0 0 10px 10px; }
 
-    @media (max-width: 600px) { nav { font-size: 14px; } video { width: 100%; } img { width: 100%; } }
+    /* LOGIN SCREEN */
+    #loginScreen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    #loginScreen input {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      text-align: center;
+    }
 </style>
 </head>
 <body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen">
+  <h1>Welcome to Cafe Finds in Makati ☕</h1>
+  <p>Please log in to continue</p>
+  <input type="text" id="username" placeholder="Enter username">
+  <input type="password" id="password" placeholder="Enter password">
+  <button onclick="login()">Login</button>
+  <p id="loginMsg"></p>
+</div>
+
 <!-- Navigation Bar -->
 <nav>
 <a href="#about">About</a>
@@ -61,7 +92,7 @@
 <h1>Cafe Finds in Makati</h1>
 <p>OPEN HOUSE WORLD.</p>
 <button onclick="askName()">👋 Say Hi</button>
- <br></br> <br></br><br></br> <br></br> <br></br> <br></br> <br></br><br></br><br></br>
+<br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br><br></br>
 </header>
 
 <!-- Main Content -->
@@ -72,25 +103,22 @@
 <button onclick="favoriteCafe()">🏠 Your Favorite Cafe?</button>
 </section>
 
-<!-- Image Section -->
-<section id="featured"><br></br> <br></br> 
+<section id="featured"><br></br> <br></br>
 <h1>Featured Cafe</h1><br></br>
 <img src="Open.jpg" alt="Makati Cafe View" width="500" onclick="rateCafe()">
 <p style="text-align: center;">Salcedo, Makati</p>
 <button onclick="favoriteDrink()">☕ Favorite Drink?</button>
 </section>
 
-<!-- Video Section -->
 <section id="video"><br></br> <br></br> 
 <h2>Sample Video</h2>
-<video width="400" controls onclick="videoFeedback()">
+<video width="700" controls onclick="videoFeedback()">
 <source src="Video.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 <p style="text-align: center;">Go Sit and Relax.</p>
 </section>
 
-<!-- Contact Form -->
 <section id="contact"><br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br><br></br><br></br><br></br><br></br>
 <h2>Contact Me</h2>
 <form onsubmit="return confirmSubmit()">
@@ -102,60 +130,116 @@ Your browser does not support the video tag.
 </section>
 </main>
 
-<!-- Footer -->
 <footer>
 <p>&copy; Jaymnl_kids</p>
 </footer>
 
-<!-- JavaScript with Prompts -->
+<!-- JAVASCRIPT -->
 <script>
-  // 1. Ask Name
-  function askName() {
-    let name = prompt("What is your name?");
-    if (name) alert("Welcome, " + name + "! Enjoy exploring cafes in Makati.");
-  }
+/* ---------- LOGIN SYSTEM (with objects, functions, loops, operators, strings, and conditionals) ---------- */
 
-  // 2. Favorite Cafe
-  function favoriteCafe() {
-    let cafe = prompt("What’s your favorite café in Makati?");
-    if (cafe) alert(cafe + " is a great choice!");
-  }
+// User database (object + array)
+const users = [
+  { username: "admin", password: "12345", name: "Jayvee" },
+  { username: "guest", password: "guest123", name: "Guest User" },
+  { username: "coffee", password: "brewtime", name: "Cafe Lover" }
+];
 
-  // 3. Rate Cafe (image click)
-  function rateCafe() {
-    let rating = prompt("How would you rate this cafe out of 5?");
-    if (rating) alert("Thanks! You rated this cafe " + rating + "/5.");
-  }
+  // Functions
+function login() {
+  const userInput = document.getElementById("username").value.trim();
+  const passInput = document.getElementById("password").value.trim();
+  const message = document.getElementById("loginMsg");
 
-  // 4. Favorite Drink
-  function favoriteDrink() {
-    let drink = prompt("What’s your favorite café drink?");
-    if (drink) alert(drink + " sounds delicious! Perfect for café hopping.");
-  }
+  let found = false;
 
-  // 5. Video Feedback
-  function videoFeedback() {
-    let feedback = prompt("Do you like this relaxing vibe? (yes/no)");
-    if (feedback && feedback.toLowerCase() === "yes") {
-      alert("Awesome! Glad you liked it.");
-    } else {
-      alert("No worries, maybe the next café will suit your vibe.");
+      // Loops
+  for (let i = 0; i < users.length; i++) {
+    let user = users[i];
+      // Conditional check
+    if (userInput === user.username && passInput === user.password) {
+      found = true;
+      // Strings
+      message.innerText = `Welcome ${user.name}! Logging you in...`;
+      message.style.color = "lightgreen";
+
+      // Operators
+      setTimeout(() => {
+        document.getElementById("loginScreen").style.display = "none";
+        alert("Successfully logged in, " + user.name + "! Enjoy exploring cafes ☕");
+      }, 1000 + 500); // simple operator use
+      break;
     }
   }
 
-  // 6. Confirm Form Submit
-  function confirmSubmit() {
-    let confirmMsg = prompt("Are you sure you want to submit this form? Type YES to confirm.");
-    if (confirmMsg && confirmMsg.toLowerCase() === "yes") {
-      alert("Form submitted successfully!");
-      return true;
+  // If user not found
+  if (!found) {
+    message.innerText = "Invalid username or password. Please try again.";
+    message.style.color = "red";
+  }
+}
+
+/* ---------- EXISTING FUNCTIONS BELOW ---------- */
+
+// Ask Name
+function askName() {
+  let name = prompt("What is your name?");
+  if (name) alert("Welcome, " + name + "! Enjoy exploring cafes in Makati.");
+}
+
+// Favorite Cafe
+function favoriteCafe() {
+  let cafe = prompt("What’s your favorite café in Makati?");
+  if (cafe) alert(cafe + " is a great choice!");
+}
+
+// Rate Cafe
+function rateCafe() {
+  let rating = prompt("How would you rate this cafe out of 5?");
+  if (rating) {
+    // Operator & Conditional
+    rating = Number(rating);
+    if (rating >= 4) {
+      alert("Wow! You loved it!");
+    } else if (rating >= 2) {
+      alert("Not bad, maybe next time it’ll be better!");
     } else {
-      alert("Form submission cancelled.");
-      return false;
+      alert("Oh no! That’s too low!");
     }
   }
+}
+
+// Favorite Drink
+function favoriteDrink() {
+  let drink = prompt("What’s your favorite café drink?");
+  if (drink) alert(drink.toUpperCase() + " sounds delicious! Perfect for café hopping.");
+}
+
+// Video Feedback
+function videoFeedback() {
+  let feedback = prompt("Do you like this relaxing vibe? (yes/no)");
+  if (feedback && feedback.toLowerCase() === "yes") {
+    alert("Awesome! Glad you liked it.");
+  } else {
+    alert("No worries, maybe the next café will suit your vibe.");
+  }
+}
+
+// Confirm Form Submit
+function confirmSubmit() {
+  let confirmMsg = prompt("Are you sure you want to submit this form? Type YES to confirm.");
+  if (confirmMsg && confirmMsg.toLowerCase() === "yes") {
+    // Loop example
+    for (let i = 1; i <= 3; i++) {
+      console.log("Thank you message #" + i);
+    }
+    alert("Form submitted successfully!");
+    return true;
+  } else {
+    alert("Form submission cancelled.");
+    return false;
+  }
+}
 </script>
 </body>
 </html>
-
- 
